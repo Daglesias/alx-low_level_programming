@@ -25,4 +25,3 @@ char *rot13(char *p)
 	}
 	return (p);
 }
-© 2022 GitHub, Inc.
