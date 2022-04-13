@@ -1,7 +1,36 @@
-int _putchar(char c);
-char *create_array(unsigned int size, char c);
-char *_strdup(char *str);
-char *str_concat(char *s1, char *s2);
-int **alloc_grid(int width, int height);
-void free_grid(int **grid, int height);
-char *argstostr(int ac, char **av);
+#include <stdio.h>
+#include <stdlib.h>
+/**
+  *main - print opcodes of a given machine.
+  *@argc: number of arguments.
+  *@argv: argument vector.
+  *
+  *Return: 0.
+  */
+int main(int argc, char *argv[])
+{
+  int count, bytes;
+
+  if (argc != 2)
+  {
+    printf("Error\n");
+    exit(1);
+  }
+
+  bytes = atoi(argv[1]);
+  if (bytes < 0)
+  {
+    printf("Error\n");
+    exit(2);
+  }
+
+  for (count = 0; count < bytes; count++)
+  {
+    printf("%02hhx", *((char *)main + count));
+    if (count  < bytes - 1)
+      printf(" ");
+    else
+      printf("\n");
+  }
+  return (0);
+}
